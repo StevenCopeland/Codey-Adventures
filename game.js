@@ -326,8 +326,8 @@ class Credits extends Phaser.Scene {
     gameState.player.angle = 20;
     this.add.text(config.width / 2 - 100, (config.height / 2) + 100, '     Created by: \n Steven Copeland', {fill : 'black', font: '20px Arial'});
 
-    const music = this.sound.add('bgmusic');
-    music.play();
+    // const music = this.sound.add('bgmusic');
+    // music.play();
   }
 
   update() {
@@ -356,5 +356,8 @@ const config = {
   },
   scene: [Level1, Level2, Level3, Level4, Level5, Credits]
 };
+
+var audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
+audio.play();
 
 const game = new Phaser.Game(config);
