@@ -50,6 +50,9 @@ class Level extends Phaser.Scene {
     this.physics.add.collider(gameState.goal, gameState.platforms);
 
     gameState.cursors = this.input.keyboard.createCursorKeys();
+
+    // gameState.music = this.sound.add('bgMusic');
+    // gameState.music.play();
   }
 
   createPlatform(xIndex, yIndex) {
