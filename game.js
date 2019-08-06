@@ -21,6 +21,7 @@ class Level extends Phaser.Scene {
     this.load.image('bg1', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/mountain.png');
     this.load.image('bg2', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/trees.png');
     this.load.image('bg3', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/snowdunes.png');
+    this.load.audio('bgMusic', 'https://stevencopeland.github.io/Codey-Adventures/Electro-Light%20-%20Symbolism%20pt.II%20%5BNCS%20Release%5D.mp3')
   }
 
   create() {
@@ -49,7 +50,6 @@ class Level extends Phaser.Scene {
     this.physics.add.collider(gameState.goal, gameState.platforms);
 
     gameState.cursors = this.input.keyboard.createCursorKeys();
-
   }
 
   createPlatform(xIndex, yIndex) {
@@ -307,7 +307,7 @@ class Credits extends Phaser.Scene {
 
   preload() {
     this.load.spritesheet('codey_sled', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/codey_sled.png', { frameWidth: 81, frameHeight: 90 });
-	  this.load.audio('bgmusic', 'Symbolism.mp3')
+	  this.load.audio('bgmusic', 'https://stevencopeland.github.io/Codey-Adventures/Symbolism.mp3')
   }
 
   create() {
@@ -323,7 +323,7 @@ class Credits extends Phaser.Scene {
     gameState.player.angle = 20;
     this.add.text(config.width / 2 - 100, (config.height / 2) + 100, '     Created by: \n Steven Copeland', {fill : 'black', font: '20px Arial'});
 
-    const music = game.add.audio('bgmusic');
+    const music = this.sound.add('bgmusic');
     music.play();
   }
 
