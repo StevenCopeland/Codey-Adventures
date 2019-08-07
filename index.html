@@ -7,12 +7,21 @@
   <style>
     canvas {
       width: 500px;
+      float: left;
+    }
+
+    .fa-play {
+      text-align: left;
+      padding-left: 550px;
     }
   </style>
-
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-
 <body>
+  <div>
+    <i class='fas fa-play' style='font-size:24px;' onclick="play()"></i>
+    <i class='fas fa-pause' style='font-size:24px;' onclick="pause()"></i>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.js"></script>
   <script defer src="game.js"></script>
 </body>

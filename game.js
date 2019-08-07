@@ -357,7 +357,23 @@ const config = {
   scene: [Level1, Level2, Level3, Level4, Level5, Credits]
 };
 
-var audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
-audio.play();
+const audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
+
+const play = function() {
+  audio.play();
+}
+
+const pause = function() {
+  audio.pause();
+}
+
+
+/*
+'<div>
+  <i class='fas fa-play' style='font-size:24px;'></i>
+  <i class='fas fa-pause' style='font-size:24px;'></i>
+</div>'
+*/
+
 
 const game = new Phaser.Game(config);
