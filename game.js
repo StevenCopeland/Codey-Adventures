@@ -368,7 +368,7 @@ const config = {
 
     }
   },
-  scene: [Level6, Level2, Level3, Level4, Level5, Level1, Credits]
+  scene: [Level1, Level2, Level3, Level4, Level5, Level6, Credits]
 };
 
 const audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
