@@ -33,7 +33,7 @@ class Level extends Phaser.Scene {
     this.createStars();
     this.createParallaxBackgrounds();
 
-    gameState.player = this.physics.add.sprite(125, 110, 'codey').setScale(.5);
+    gameState.player = this.physics.add.sprite(125, 10, 'codey').setScale(.5);
     gameState.platforms = this.physics.add.staticGroup();
 
     this.createAnimations();
@@ -61,7 +61,11 @@ class Level extends Phaser.Scene {
     // Creates a platform evenly spaced along the two indices.
     // If either is not a number it won't make a platform
       if (typeof yIndex === 'number' && typeof xIndex === 'number') {
-        gameState.platforms.create((220 * xIndex),  yIndex * 70, 'platform').setOrigin(0, 0.5).refreshBody();
+        if(this.levelKey === 'Level6') {
+          gameState.platforms.create((220 * xIndex),  yIndex * 70, 'platform2').setOrigin(0, 0.5).refreshBody();
+        }else{
+          gameState.platforms.create((220 * xIndex),  yIndex * 70, 'platform').setOrigin(0, 0.5).refreshBody();
+        }
       }
   }
 
@@ -308,7 +312,7 @@ class Level5 extends Level {
 class Level6 extends Level {
   constructor() {
     super('Level6')
-    this.heights = [3, null, 6, 4, null, 5.5, null, 4, 6, 4];
+    this.heights = [1, null, 5.5, null, 4, 1.9, null, 6, 4];
     this.weather = 'afternoon';
   }
 }
@@ -364,7 +368,7 @@ const config = {
 
     }
   },
-  scene: [Level1, Level2, Level3, Level4, Level5, Level6, Credits]
+  scene: [Level6, Level2, Level3, Level4, Level5, Level1, Credits]
 };
 
 const audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
