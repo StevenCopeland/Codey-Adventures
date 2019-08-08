@@ -7,12 +7,14 @@ class Level extends Phaser.Scene {
       'Level2': 'Level3',
       'Level3': 'Level4',
 			'Level4': 'Level5',
-      'Level5': 'Credits',
+      'Level5': 'Level6',
+      'Level6': 'Credits',
     }
   }
 
   preload() {
     this.load.image('platform', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/platform.png');
+    this.load.image('platform2', 'https://stevencopeland.github.io/Codey-Adventures/platform2.png')
     this.load.image('snowflake', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/snowflake.png');
     this.load.spritesheet('campfire', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/campfire.png',
       { frameWidth: 32, frameHeight: 32});
@@ -21,7 +23,7 @@ class Level extends Phaser.Scene {
     this.load.image('bg1', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/mountain.png');
     this.load.image('bg2', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/trees.png');
     this.load.image('bg3', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Codey+Tundra/snowdunes.png');
-    this.load.audio('bgMusic', 'https://stevencopeland.github.io/Codey-Adventures/Electro-Light%20-%20Symbolism%20pt.II%20%5BNCS%20Release%5D.mp3')
+    // this.load.audio('bgMusic', 'https://stevencopeland.github.io/Codey-Adventures/Electro-Light%20-%20Symbolism%20pt.II%20%5BNCS%20Release%5D.mp3')
   }
 
   create() {
@@ -303,6 +305,14 @@ class Level5 extends Level {
   }
 }
 
+class Level6 extends Level {
+  constructor() {
+    super('Level6')
+    this.heights = [3, null, 6, 4, null, 5.5, null, 4, 6, 4];
+    this.weather = 'afternoon';
+  }
+}
+
 class Credits extends Phaser.Scene {
   constructor() {
     super({ key: 'Credits' })
@@ -354,7 +364,7 @@ const config = {
 
     }
   },
-  scene: [Level1, Level2, Level3, Level4, Level5, Credits]
+  scene: [Level6, Level2, Level3, Level4, Level5, Level1, Credits]
 };
 
 const audio = new Audio('Electro-Light - Symbolism pt.II [NCS Release].mp3');
